@@ -1,0 +1,13 @@
+markdownlint-cli2-codequality.json
+
+# Node.js ignores
+node_modules/
+
+# Prototype ignores - per-user
+.tmp/
+.env
+migrate.log
+
+# General ignores
+.DS_Store
+.idea
