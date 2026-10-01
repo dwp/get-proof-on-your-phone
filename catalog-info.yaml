@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: get.proof.on.your.phone
-  title: Get-Proof-On-Your-Phone
+  title: Get-Proof-on-Your-Phone
   description: |
     A prototype for testing adding proof of benefits to a phone.
 
