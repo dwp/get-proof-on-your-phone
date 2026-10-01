@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Request complete
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link govuk-link--no-visited-state" href="#">give your feedback (opens in new tab)</a>.'
+  }) }}
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Request complete
+        </h1>
+      </div>
+
+      <p class="govuk-body">You have asked for proof of Personal Independence Payment (PIP).</p>
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+
+      <p class="govuk-body">You can:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">view and download your online letter</a> from 'Your letters, messages and downloads'
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="">add proof to the GOV.UK One Login app</a>
+        </li>
+      </ul>
+      <br>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Sign out
+        </button>
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Go back to account home
+        </button>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}

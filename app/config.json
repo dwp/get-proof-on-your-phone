@@ -1,5 +1,5 @@
 {
-  "serviceName": "Service name goes here",
+  "serviceName": "Get proof of your benefits and State Pension",
   "useServiceNavigation": true,
   "plugins": {
     "govuk-frontend": {

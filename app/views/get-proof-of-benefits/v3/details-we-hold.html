@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a href="#" class="govuk-link govuk-link--no-visited-state">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="computer-or-tablet" method="post">
+        
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="doYouWantLetterFor-hint">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Details we hold for you
+              </h1>
+            </legend>
+
+            <p class="govuk-body">These are the details that will appear on your digital Personal Independence Payment (PIP) credential.</p>
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Service number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  250571386
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Alex Smith
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  DOB
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  18 Oct 1980
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Service
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <p class="govuk-body">Army</p>
+                </dd>
+              </div>
+            </dl>
+
+            <p class="govuk-body">You can continue to get your digital Veteran Card if your details have changed.</p>
+
+            <p class="govuk-body">You can contact us at any time to <a href="#" class="govuk-link govuk-link--no-visited-state">update your details (opens in new tab)</a>.</p>
+
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

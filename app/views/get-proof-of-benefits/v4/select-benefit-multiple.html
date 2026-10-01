@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link govuk-link--no-visited-state" href="#">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="details-we-hold" method="post">
+        
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="doYouWantLetterFor-hint">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Which benefit do you want to add to your GOV.UK Wallet?
+              </h1>
+            </legend>
+              
+            <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="doYouWantLetterFor" name="doYouWantLetterFor" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="doYouWantLetterFor">
+                  Personal Independence Payment (PIP)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="doYouWantLetterFor-2" name="doYouWantLetterFor" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="doYouWantLetterFor-2">
+                  Attendence Allowance
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

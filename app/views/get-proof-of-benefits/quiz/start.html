@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <header>
+    {{govukHeader()}}
+  </header>
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Benefits",
+        href: "#"
+      },
+      {
+        text: "Manage an existing benefit, payment or claim"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Department for Work & Pensions</span>
+      <h1 class="govuk-heading-xl">
+        Facts and figures quiz
+      </h1>
+
+      <p>Use this quiz to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>learn a little more about the DWP</li>
+        <li>feel more intelligent</li>
+        <li>fall asleep</li>
+      </ul>
+
+      <p>Quizzing takes around 10 minutes.</p>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "q1",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Before you start
+      </h2>
+
+      <p>
+        You can also <a href="#">logoff and go back to bed</a>.
+      </p>
+
+      <p>
+        The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

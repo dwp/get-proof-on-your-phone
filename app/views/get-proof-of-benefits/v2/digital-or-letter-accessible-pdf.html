@@ -1,0 +1,103 @@
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link govuk-link--no-visited-state" href="#">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="where-we-send-your-letter" method="post">
+
+        <div class="govuk-form-group">
+
+          <h1 class="govuk-heading-l">
+            Tell us how you want to get proof
+          </h1>
+
+          <p class="govuk-body">We will send an online letter to 'Your letters, messages and downloads' inbox. </p>
+            
+          <fieldset class="govuk-fieldset" aria-describedby="letterInpost-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Do you want another format?
+              </h2>
+            </legend>
+            <div id="countries-hint" class="govuk-hint">
+              Select one or more options or no
+            </div>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                <label class="govuk-label govuk-checkboxes__label" for="countries">
+                  Audio recording
+                </label>
+                <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                  Arrives by post within 1 month
+                </div>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="countries-2" name="countries" type="checkbox" value="portugal">
+                <label class="govuk-label govuk-checkboxes__label" for="countries-2">
+                  Standard letter
+                </label>
+                <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                  Arrive by post within 8 days
+                </div>                
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="countries-3" name="countries" type="checkbox" value="spain">
+                <label class="govuk-label govuk-checkboxes__label" for="countries-3">
+                  Document on your phone
+                </label>
+                <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                  Add document at the end of this service
+                </div>                
+              </div>
+              <div class="govuk-checkboxes__divider">or</div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="countries-5" name="countries" type="checkbox" value="none" data-behaviour="exclusive">
+                <label class="govuk-label govuk-checkboxes__label" for="countries-5">
+                  No other format
+                </label>
+                <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                  I'll use the online letter
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+        </div>
+
+        <!--<br>
+
+        <p class="govuk-body govuk-link--no-visited-state"><a href="/get-a-proof-of-benefit-letter/download/download-8-MC/alt-format-signposting" class="govuk-link" rel="noreferrer noopener" target="_blank">I need a different format</a></p>
+
+        <br>-->
+
+        {{ govukButton({
+          text: "Continue",
+          attributes: "govuk-button"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Account home
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link govuk-link--no-visited-state" href="#">give your feedback (opens in new tab)</a>.'
+  }) }}
+  
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Account home</span>
+      <h1 class="govuk-heading-xl">
+        Sarah Phillips
+      </h1>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Payments</h2>
+
+      <p class="govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="">Check your next payment</a>
+      </p>
+      <p class="govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="">View your recent payments</a>
+      </p>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Proof of benefits</h2>
+
+      <p class="govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="">Get proof as an online letter or by post</a>
+      </p>
+      <p class="govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="">Get proof as a digital document on your phone</a>
+      </p>
+      <p class="govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="">Your letters, messages and documents</a>
+      </p>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Personal details</h2>
+
+      <p class="govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="personal-details">View your personal details</a>
+      </p>
+
+</div>
+</div>
+
+{% endblock %}

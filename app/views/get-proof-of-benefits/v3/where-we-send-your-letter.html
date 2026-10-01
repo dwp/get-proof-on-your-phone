@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link govuk-link--no-visited-state" href="#">give your feedback (opens in new tab)</a>.'
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="check-your-answers" method="post">
+
+        <h1 class="govuk-heading-l" >Where we send your letters</h1>
+
+        {% if data.researchSetUpAddress === 'home' %}
+          <p>Your address is saved as:</p>
+        {% else %}
+          <p>The address we send your letters to is saved as:</p>
+        {% endif %}
+
+        <div class="govuk-inset-text">
+            <p>72 Guild Street<br>London<br>SE23 6FH</p>
+        </div>
+
+        {{ govukRadios({
+          name: "confirmLetterSend",
+          fieldset: {
+            legend: {
+              text: "Is your address correct?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
